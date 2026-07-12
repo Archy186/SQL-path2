@@ -17,6 +17,31 @@ HAVING COUNT(c.customer_id) > 300;
 ]
 <img width="918" height="598" alt="1" src="https://github.com/user-attachments/assets/3905d909-aa42-4345-b59a-bf50593fe6e6" />
 
+> [!NOTE]
+> **Задание 1:** Получить информацию о магазине, в котором обслуживается более 300 покупателей.
+> 
+> **Что делает запрос:**
+> - Объединяет таблицы staff, address, city, store и customer
+> - Группирует данные по сотрудникам магазинов
+> - Оставляет только те магазины, где количество покупателей > 300
+> - Выводит полное имя сотрудника, город и количество покупателей
+
+```sql
+SELECT 
+    CONCAT(s.first_name, ' ', s.last_name) AS 'Сотрудник магазина',
+    cm.city AS 'Город нахождения магазина',
+    COUNT(c.customer_id) AS 'Количество пользователей'
+FROM staff AS s
+JOIN address AS a ON a.address_id = s.address_id
+JOIN city AS cm ON cm.city_id = a.city_id
+JOIN store AS st ON st.store_id = s.store_id
+JOIN customer AS c ON c.store_id = s.store_id
+GROUP BY s.staff_id, s.first_name, s.last_name, cm.city
+HAVING COUNT(c.customer_id) > 300;
+
+
+
+
 Задание 2
 Получите количество фильмов, продолжительность которых больше средней продолжительности всех фильмов.
 Решение 
