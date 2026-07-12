@@ -1,6 +1,4 @@
-> [!NOTE]
-> **Задание 1:** Магазины с более чем 300 покупателями
-
+````markdown
 ```sql
 SELECT 
     CONCAT(s.first_name , " ", s.last_name) AS 'Сотрудник магазина', 
