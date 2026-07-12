@@ -32,3 +32,15 @@ markdown
 > WHERE length > (SELECT AVG(length) FROM film);
 > ```
 > <img width="915" height="557" alt="2" src="https://github.com/user-attachments/assets/624b759e-4460-43c8-a969-fc8664effc15" />
+
+Задание 3
+Получите информацию, за какой месяц была получена наибольшая сумма платежей, и добавьте информацию по количеству аренд за этот месяц.
+> ```sql
+> SELECT  
+SELECT SUM(amount) Платеж, DATE_FORMAT(payment_date, '%Y-%m') Месяц, COUNT(rental_id) Количество_аренд 
+FROM sakila.payment
+GROUP BY DATE_FORMAT(payment_date, '%Y-%m')
+ORDER BY SUM(amount) DESC 
+LIMIT 1;
+> ```
+> <img width="916" height="557" alt="3" src="https://github.com/user-attachments/assets/1816b75f-1233-4b15-8747-f3a1221b3802" />
