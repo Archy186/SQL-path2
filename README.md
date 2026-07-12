@@ -5,7 +5,7 @@
 город нахождения магазина;
 количество пользователей, закреплённых в этом магазине.
 Решение 
-{
+SQL{
 SELECT CONCAT(s.first_name , " ", s.last_name) AS 'Сотрудник магазина', cm.city AS 'Город нахождения магазина', COUNT(c.customer_id) AS 'Количество пользователей'
 FROM staff AS s
 JOIN address AS a ON a.address_id = s.address_id
