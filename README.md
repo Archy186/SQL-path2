@@ -1,5 +1,4 @@
 ````markdown
-```sql
 SELECT 
     CONCAT(s.first_name , " ", s.last_name) AS 'Сотрудник магазина', 
     cm.city AS 'Город нахождения магазина', 
