@@ -1,3 +1,4 @@
+attachments/assets/0a8ea9ef-ebd7-4106-9634-2d2fe7e99dd2" />
 # SQL-path2
 Задание 1
 Одним запросом получите информацию о магазине, в котором обслуживается более 300 покупателей, и выведите в результат следующую информацию:
@@ -18,4 +19,4 @@ JOIN store AS st ON st.store_id = s.store_id
 JOIN customer AS c ON c.store_id = s.store_id
 GROUP BY s.staff_id, s.first_name, s.last_name, cm.city
 HAVING COUNT(c.customer_id) > 300;
-
+<img width="918" height="598" alt="1" src="https://github.com/user-
