@@ -35,8 +35,7 @@ markdown
 
 Задание 3
 Получите информацию, за какой месяц была получена наибольшая сумма платежей, и добавьте информацию по количеству аренд за этот месяц.
-> ```sql
-> SELECT  
+> ```sql 
 SELECT SUM(amount) Платеж, DATE_FORMAT(payment_date, '%Y-%m') Месяц, COUNT(rental_id) Количество_аренд 
 FROM sakila.payment
 GROUP BY DATE_FORMAT(payment_date, '%Y-%m')
