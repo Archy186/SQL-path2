@@ -35,11 +35,14 @@ markdown
 
 Задание 3
 Получите информацию, за какой месяц была получена наибольшая сумма платежей, и добавьте информацию по количеству аренд за этот месяц.
-> ```sql 
-SELECT SUM(amount) Платеж, DATE_FORMAT(payment_date, '%Y-%m') Месяц, COUNT(rental_id) Количество_аренд 
-FROM sakila.payment
-GROUP BY DATE_FORMAT(payment_date, '%Y-%m')
-ORDER BY SUM(amount) DESC 
-LIMIT 1;
+> ```sql
+> SELECT 
+>     SUM(amount) AS 'Платеж',
+>     DATE_FORMAT(payment_date, '%Y-%m') AS 'Месяц',
+>     COUNT(rental_id) AS 'Количество_аренд'
+> FROM sakila.payment
+> GROUP BY DATE_FORMAT(payment_date, '%Y-%m')
+> ORDER BY SUM(amount) DESC 
+> LIMIT 1;
 > ```
 > <img width="916" height="557" alt="3" src="https://github.com/user-attachments/assets/1816b75f-1233-4b15-8747-f3a1221b3802" />
